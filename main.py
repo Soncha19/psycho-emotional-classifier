@@ -43,7 +43,6 @@ def predict():
     if request.method == 'POST':
         text = request.form['text_input']
         cleaned_text = preprocess_text(text)
-
         prediction, probabilities = ensemble_predict([cleaned_text])
         predicted_class = prediction[0]
         label_mapping = {0: "ADHD", 1: "Anxiety", 2: "Bipolar", 3: "BPD", 4: "Depression", 5: "Normal", 6: "OCD", 7: "PTSD"}
